@@ -1,0 +1,21 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="AutomationFrameworkSuite" parallel="tests" thread-count="10">
+    <listeners>
+        <listener class-name="org.automation.listeners.TestSuiteListener"/>
+        <listener class-name="org.automation.listeners.SuiteExecutionListener"/>
+    </listeners>
+
+    <!-- UI Tests run methods in parallel to isolate WebDriver instances -->
+    <test name="UI Tests" parallel="methods" thread-count="10">
+        <packages>
+            <package name="org.automation.ui"/>
+        </packages>
+    </test>
+
+    <!-- API Tests can run in parallel at the test level -->
+    <test name="API Tests" parallel="methods" thread-count="10">
+        <packages>
+            <package name="org.automation.api"/>
+        </packages>
+    </test>
+</suite>

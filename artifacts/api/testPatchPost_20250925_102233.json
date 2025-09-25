@@ -1,0 +1,11 @@
+{
+  "testName": "testPatchPost",
+  "timestamp": "20250925_102233",
+  "request": "{ \"title\":\"patched\" }",
+  "response": "{
+  \"userId\": 1,
+  \"id\": 1,
+  \"title\": \"patched\",
+  \"body\": \"quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto\"
+}"
+}

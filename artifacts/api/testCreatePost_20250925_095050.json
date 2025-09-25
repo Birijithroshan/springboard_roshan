@@ -1,0 +1,11 @@
+{
+  "testName": "testCreatePost",
+  "timestamp": "20250925_095050",
+  "request": "{ \"title\":\"foo\", \"body\":\"bar\", \"userId\":1 }",
+  "response": "{
+  \"title\": \"foo\",
+  \"body\": \"bar\",
+  \"userId\": 1,
+  \"id\": 101
+}"
+}

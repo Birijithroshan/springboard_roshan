@@ -1,0 +1,183 @@
+<html>
+<head>
+<title>TestNG:  UI_Tests</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>UI_Tests</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>9/1/0</td>
+</tr><tr>
+<td>Started on:</td><td>Tue Sep 16 20:11:00 IST 2025</td>
+</tr>
+<tr><td>Total time:</td><td>70 seconds (70974 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='org.automation.ui.BlazeDemoTests.testFlightSelectionPage()'><b>testFlightSelectionPage</b><br>Test class: org.automation.ui.BlazeDemoTests<br>Test method: Verify flight selection page displays flights</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.name: fromPort (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.14.0&apos;, revision: &apos;e5a96349ce&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 140.0.7339.128, chrome: {chromedriverVersion: 140.0.7339.82 (bc93617e21c3..., userDataDir: D:\TempMaven\scoped_dir8080...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58039}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58039/devtoo..., se:cdpVersion: 140.0.7339.128, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 7245c87bbcce2881b5cbb4bd9794e296
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
+	at org.automation.ui.BlazeDemoTests.testFlightSelectionPage(BlazeDemoTests.java:64)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+... Removed 15 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace119410111", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace119410111'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.name: fromPort (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.14.0&apos;, revision: &apos;e5a96349ce&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 140.0.7339.128, chrome: {chromedriverVersion: 140.0.7339.82 (bc93617e21c3..., userDataDir: D:\TempMaven\scoped_dir8080...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58039}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58039/devtoo..., se:cdpVersion: 140.0.7339.128, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 7245c87bbcce2881b5cbb4bd9794e296
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
+	at org.automation.ui.BlazeDemoTests.testFlightSelectionPage(BlazeDemoTests.java:64)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:848)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:481)
+	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+</pre></div></td>
+<td>12</td>
+<td>org.automation.ui.BlazeDemoTests@70d046e8</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='org.automation.ui.BlazeDemoTests.testSelectFirstFlight()'><b>testSelectFirstFlight</b><br>Test class: org.automation.ui.BlazeDemoTests<br>Test method: Verify selecting first flight works</td>
+<td></td>
+<td>3</td>
+<td>org.automation.ui.BlazeDemoTests@70d046e8</td></tr>
+<tr>
+<td title='org.automation.ui.BlazeDemoTests.testCreditCardDetails()'><b>testCreditCardDetails</b><br>Test class: org.automation.ui.BlazeDemoTests<br>Test method: Verify credit card details can be entered</td>
+<td></td>
+<td>3</td>
+<td>org.automation.ui.BlazeDemoTests@70d046e8</td></tr>
+<tr>
+<td title='org.automation.ui.BlazeDemoTests.testFlightSearchNavigation()'><b>testFlightSearchNavigation</b><br>Test class: org.automation.ui.BlazeDemoTests<br>Test method: Verify flight search navigation</td>
+<td></td>
+<td>4</td>
+<td>org.automation.ui.BlazeDemoTests@70d046e8</td></tr>
+<tr>
+<td title='org.automation.ui.BlazeDemoTests.testHomePageTitle()'><b>testHomePageTitle</b><br>Test class: org.automation.ui.BlazeDemoTests<br>Test method: Verify homepage title</td>
+<td></td>
+<td>9</td>
+<td>org.automation.ui.BlazeDemoTests@70d046e8</td></tr>
+<tr>
+<td title='org.automation.ui.BlazeDemoTests.testPurchasePageContainsForm()'><b>testPurchasePageContainsForm</b><br>Test class: org.automation.ui.BlazeDemoTests<br>Test method: Verify purchase page contains form</td>
+<td></td>
+<td>4</td>
+<td>org.automation.ui.BlazeDemoTests@70d046e8</td></tr>
+<tr>
+<td title='org.automation.ui.BlazeDemoTests.testFillPurchaseForm()'><b>testFillPurchaseForm</b><br>Test class: org.automation.ui.BlazeDemoTests<br>Test method: Verify filling purchase form</td>
+<td></td>
+<td>3</td>
+<td>org.automation.ui.BlazeDemoTests@70d046e8</td></tr>
+<tr>
+<td title='org.automation.ui.BlazeDemoTests.testHomePageContainsDepartureAndDestination()'><b>testHomePageContainsDepartureAndDestination</b><br>Test class: org.automation.ui.BlazeDemoTests<br>Test method: Verify homepage has fromPort and toPort</td>
+<td></td>
+<td>10</td>
+<td>org.automation.ui.BlazeDemoTests@70d046e8</td></tr>
+<tr>
+<td title='org.automation.ui.BlazeDemoTests.testPurchaseFlight()'><b>testPurchaseFlight</b><br>Test class: org.automation.ui.BlazeDemoTests<br>Test method: Verify flight can be purchased</td>
+<td></td>
+<td>3</td>
+<td>org.automation.ui.BlazeDemoTests@70d046e8</td></tr>
+<tr>
+<td title='org.automation.ui.BlazeDemoTests.testConfirmationPage()'><b>testConfirmationPage</b><br>Test class: org.automation.ui.BlazeDemoTests<br>Test method: Verify confirmation page is displayed</td>
+<td></td>
+<td>5</td>
+<td>org.automation.ui.BlazeDemoTests@70d046e8</td></tr>
+</table><p>
+</body>
+</html>

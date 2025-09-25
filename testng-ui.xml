@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="BlazeDemo_UI_Suite" parallel="tests" thread-count="10">
+
+    <listeners>
+        <listener class-name="org.automation.listeners.TestSuiteListener"/>
+        <listener class-name="org.automation.listeners.SuiteExecutionListener"/>
+    </listeners>
+    <test name="UI_Tests" preserve-order="false">
+        <packages>
+            <package name="org.automation.ui"/>
+        </packages>
+    </test>
+
+</suite>

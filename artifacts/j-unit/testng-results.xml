@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="20" passed="20" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-09-25T10:25:30 IST" name="AutomationFrameworkParallelSuite" finished-at="2025-09-25T10:25:49 IST" duration-ms="18781">
+    <groups>
+    </groups>
+    <test started-at="2025-09-25T10:25:30 IST" name="JsonPlaceholder_API_Tests" finished-at="2025-09-25T10:25:37 IST" duration-ms="7701">
+      <class name="org.automation.api.JsonPlaceholderTests">
+        <test-method is-config="true" signature="setup()[pri:0, instance:org.automation.api.JsonPlaceholderTests@21507a04]" started-at="2025-09-25T10:25:30 IST" name="setup" finished-at="2025-09-25T10:25:31 IST" duration-ms="895" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testCreateComment()[pri:0, instance:org.automation.api.JsonPlaceholderTests@21507a04]" started-at="2025-09-25T10:25:31 IST" name="testCreateComment" description="Create a comment" finished-at="2025-09-25T10:25:37 IST" duration-ms="6588" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCreateComment -->
+        <test-method signature="testGetCommentsForPost()[pri:0, instance:org.automation.api.JsonPlaceholderTests@21507a04]" started-at="2025-09-25T10:25:31 IST" name="testGetCommentsForPost" description="Get comments for a post" finished-at="2025-09-25T10:25:37 IST" duration-ms="6587" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGetCommentsForPost -->
+        <test-method signature="testDeletePost()[pri:0, instance:org.automation.api.JsonPlaceholderTests@21507a04]" started-at="2025-09-25T10:25:31 IST" name="testDeletePost" description="Delete a post" finished-at="2025-09-25T10:25:36 IST" duration-ms="4831" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDeletePost -->
+        <test-method signature="testCreatePost()[pri:0, instance:org.automation.api.JsonPlaceholderTests@21507a04]" started-at="2025-09-25T10:25:31 IST" name="testCreatePost" description="Create a new post" finished-at="2025-09-25T10:25:37 IST" duration-ms="6587" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCreatePost -->
+        <test-method signature="testGetSinglePost()[pri:0, instance:org.automation.api.JsonPlaceholderTests@21507a04]" started-at="2025-09-25T10:25:31 IST" name="testGetSinglePost" description="Get single post by ID" finished-at="2025-09-25T10:25:37 IST" duration-ms="6586" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGetSinglePost -->
+        <test-method signature="testGetSingleUser()[pri:0, instance:org.automation.api.JsonPlaceholderTests@21507a04]" started-at="2025-09-25T10:25:31 IST" name="testGetSingleUser" description="Get single user by ID" finished-at="2025-09-25T10:25:37 IST" duration-ms="6586" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGetSingleUser -->
+        <test-method signature="testGetAllPosts()[pri:0, instance:org.automation.api.JsonPlaceholderTests@21507a04]" started-at="2025-09-25T10:25:31 IST" name="testGetAllPosts" description="Get all posts" finished-at="2025-09-25T10:25:37 IST" duration-ms="6585" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGetAllPosts -->
+        <test-method signature="testPatchPost()[pri:0, instance:org.automation.api.JsonPlaceholderTests@21507a04]" started-at="2025-09-25T10:25:31 IST" name="testPatchPost" description="Patch an existing post" finished-at="2025-09-25T10:25:37 IST" duration-ms="6584" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testPatchPost -->
+        <test-method signature="testGetAllUsers()[pri:0, instance:org.automation.api.JsonPlaceholderTests@21507a04]" started-at="2025-09-25T10:25:31 IST" name="testGetAllUsers" description="Get all users" finished-at="2025-09-25T10:25:37 IST" duration-ms="6584" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGetAllUsers -->
+        <test-method signature="testUpdatePost()[pri:0, instance:org.automation.api.JsonPlaceholderTests@21507a04]" started-at="2025-09-25T10:25:31 IST" name="testUpdatePost" description="Update an existing post" finished-at="2025-09-25T10:25:37 IST" duration-ms="6583" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testUpdatePost -->
+      </class> <!-- org.automation.api.JsonPlaceholderTests -->
+    </test> <!-- JsonPlaceholder_API_Tests -->
+    <test started-at="2025-09-25T10:25:30 IST" name="BlazeDemo_UI_Tests" finished-at="2025-09-25T10:25:49 IST" duration-ms="18781">
+      <class name="org.automation.ui.BlazeDemoTests">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:org.automation.ui.BlazeDemoTests@62bd765]" started-at="2025-09-25T10:25:30 IST" name="setUp" finished-at="2025-09-25T10:25:36 IST" duration-ms="5639" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:org.automation.ui.BlazeDemoTests@62bd765]" started-at="2025-09-25T10:25:30 IST" name="setUp" finished-at="2025-09-25T10:25:36 IST" duration-ms="5653" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:org.automation.ui.BlazeDemoTests@62bd765]" started-at="2025-09-25T10:25:30 IST" name="setUp" finished-at="2025-09-25T10:25:35 IST" duration-ms="5475" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:org.automation.ui.BlazeDemoTests@62bd765]" started-at="2025-09-25T10:25:30 IST" name="setUp" finished-at="2025-09-25T10:25:35 IST" duration-ms="5475" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:org.automation.ui.BlazeDemoTests@62bd765]" started-at="2025-09-25T10:25:30 IST" name="setUp" finished-at="2025-09-25T10:25:35 IST" duration-ms="5474" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:org.automation.ui.BlazeDemoTests@62bd765]" started-at="2025-09-25T10:25:30 IST" name="setUp" finished-at="2025-09-25T10:25:35 IST" duration-ms="5474" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:org.automation.ui.BlazeDemoTests@62bd765]" started-at="2025-09-25T10:25:30 IST" name="setUp" finished-at="2025-09-25T10:25:35 IST" duration-ms="5474" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:org.automation.ui.BlazeDemoTests@62bd765]" started-at="2025-09-25T10:25:30 IST" name="setUp" finished-at="2025-09-25T10:25:35 IST" duration-ms="5474" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:org.automation.ui.BlazeDemoTests@62bd765]" started-at="2025-09-25T10:25:30 IST" name="setUp" finished-at="2025-09-25T10:25:35 IST" duration-ms="5473" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:org.automation.ui.BlazeDemoTests@62bd765]" started-at="2025-09-25T10:25:30 IST" name="setUp" finished-at="2025-09-25T10:25:35 IST" duration-ms="5473" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testHomePageTitle()[pri:0, instance:org.automation.ui.BlazeDemoTests@62bd765]" started-at="2025-09-25T10:25:35 IST" name="testHomePageTitle" description="Verify Home Page Title" finished-at="2025-09-25T10:25:38 IST" duration-ms="2890" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testHomePageTitle -->
+        <test-method signature="testSelectFirstFlight()[pri:0, instance:org.automation.ui.BlazeDemoTests@62bd765]" started-at="2025-09-25T10:25:35 IST" name="testSelectFirstFlight" description="Select First Flight from Flights Page" finished-at="2025-09-25T10:25:40 IST" duration-ms="4353" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSelectFirstFlight -->
+        <test-method signature="testFlightSearchNavigation()[pri:0, instance:org.automation.ui.BlazeDemoTests@62bd765]" started-at="2025-09-25T10:25:35 IST" name="testFlightSearchNavigation" description="Verify Flight Search Navigation from Home Page" finished-at="2025-09-25T10:25:40 IST" duration-ms="4541" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testFlightSearchNavigation -->
+        <test-method signature="testFillPurchaseForm()[pri:0, instance:org.automation.ui.BlazeDemoTests@62bd765]" started-at="2025-09-25T10:25:35 IST" name="testFillPurchaseForm" description="Fill Purchase Form" finished-at="2025-09-25T10:25:48 IST" duration-ms="12708" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testFillPurchaseForm -->
+        <test-method signature="testNavigateToHomePage()[pri:0, instance:org.automation.ui.BlazeDemoTests@62bd765]" started-at="2025-09-25T10:25:35 IST" name="testNavigateToHomePage" description="Navigate to Home Page" finished-at="2025-09-25T10:25:38 IST" duration-ms="2988" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testNavigateToHomePage -->
+        <test-method signature="testFlightSelectionPage()[pri:0, instance:org.automation.ui.BlazeDemoTests@62bd765]" started-at="2025-09-25T10:25:35 IST" name="testFlightSelectionPage" description="Verify Flight Selection Page UI Elements" finished-at="2025-09-25T10:25:39 IST" duration-ms="3583" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testFlightSelectionPage -->
+        <test-method signature="testConfirmationPage()[pri:0, instance:org.automation.ui.BlazeDemoTests@62bd765]" started-at="2025-09-25T10:25:35 IST" name="testConfirmationPage" description="Verify Confirmation Page" finished-at="2025-09-25T10:25:38 IST" duration-ms="3080" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testConfirmationPage -->
+        <test-method signature="testPurchasePageContainsForm()[pri:0, instance:org.automation.ui.BlazeDemoTests@62bd765]" started-at="2025-09-25T10:25:35 IST" name="testPurchasePageContainsForm" description="Verify Purchase Page Contains Form" finished-at="2025-09-25T10:25:39 IST" duration-ms="3804" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testPurchasePageContainsForm -->
+        <test-method signature="testHomePageContainsDepartureAndDestination()[pri:0, instance:org.automation.ui.BlazeDemoTests@62bd765]" started-at="2025-09-25T10:25:36 IST" name="testHomePageContainsDepartureAndDestination" description="Verify Departure and Destination fields exist on Home Page" finished-at="2025-09-25T10:25:40 IST" duration-ms="4460" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testHomePageContainsDepartureAndDestination -->
+        <test-method signature="testPurchaseFlight()[pri:0, instance:org.automation.ui.BlazeDemoTests@62bd765]" started-at="2025-09-25T10:25:36 IST" name="testPurchaseFlight" description="Purchase Flight" finished-at="2025-09-25T10:25:41 IST" duration-ms="5627" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testPurchaseFlight -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.automation.ui.BlazeDemoTests@62bd765]" started-at="2025-09-25T10:25:39 IST" name="tearDown" finished-at="2025-09-25T10:25:39 IST" duration-ms="638" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.automation.ui.BlazeDemoTests@62bd765]" started-at="2025-09-25T10:25:39 IST" name="tearDown" finished-at="2025-09-25T10:25:39 IST" duration-ms="380" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.automation.ui.BlazeDemoTests@62bd765]" started-at="2025-09-25T10:25:39 IST" name="tearDown" finished-at="2025-09-25T10:25:39 IST" duration-ms="419" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.automation.ui.BlazeDemoTests@62bd765]" started-at="2025-09-25T10:25:39 IST" name="tearDown" finished-at="2025-09-25T10:25:39 IST" duration-ms="248" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.automation.ui.BlazeDemoTests@62bd765]" started-at="2025-09-25T10:25:39 IST" name="tearDown" finished-at="2025-09-25T10:25:40 IST" duration-ms="148" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.automation.ui.BlazeDemoTests@62bd765]" started-at="2025-09-25T10:25:40 IST" name="tearDown" finished-at="2025-09-25T10:25:40 IST" duration-ms="130" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.automation.ui.BlazeDemoTests@62bd765]" started-at="2025-09-25T10:25:40 IST" name="tearDown" finished-at="2025-09-25T10:25:40 IST" duration-ms="149" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.automation.ui.BlazeDemoTests@62bd765]" started-at="2025-09-25T10:25:40 IST" name="tearDown" finished-at="2025-09-25T10:25:40 IST" duration-ms="156" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.automation.ui.BlazeDemoTests@62bd765]" started-at="2025-09-25T10:25:41 IST" name="tearDown" finished-at="2025-09-25T10:25:42 IST" duration-ms="193" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.automation.ui.BlazeDemoTests@62bd765]" started-at="2025-09-25T10:25:48 IST" name="tearDown" finished-at="2025-09-25T10:25:49 IST" duration-ms="237" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- org.automation.ui.BlazeDemoTests -->
+    </test> <!-- BlazeDemo_UI_Tests -->
+  </suite> <!-- AutomationFrameworkParallelSuite -->
+</testng-results>
