@@ -14,12 +14,18 @@ import java.util.Date;
 public class ScreenshotUtils {
 
     public static String capture(WebDriver driver, String testName) {
+        if (driver == null) return null;
+
         try {
             String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-            String path = "target/screenshots/" + testName + "_" + timestamp + ".png";
+            String folderPath = "target/screenshots/";
+            Files.createDirectories(Paths.get(folderPath));
+
+            String path = folderPath + testName + "_FAILED_" + timestamp + ".png";
             File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-            Files.createDirectories(Paths.get("target/screenshots/"));
             Files.copy(src.toPath(), Paths.get(path));
+
+            System.out.println("📸 Screenshot captured for failed test: " + path);
             return path;
         } catch (IOException e) {
             e.printStackTrace();

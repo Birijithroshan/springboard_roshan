@@ -4,9 +4,6 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.automation.ui.DriverManager;
-import org.automation.reports.CsvReportGenerator;
-import org.automation.reports.ExcelReportGenerator;
-import org.automation.reports.HtmlReportGenerator;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -37,11 +34,12 @@ public class TestSuiteListener implements ITestListener {
     }
 
     private void insertExecutionLog(String testName, String status, String type,
-                                    String usId, String tcId, String artifact) {
+                                    String usId, String tcId, String artifact, String screenshotPath) {
         usId = truncate(usId, MAX_US_ID_LENGTH);
         tcId = truncate(tcId, MAX_TC_ID_LENGTH);
 
-        String sql = "INSERT INTO execution_log (test_name, status, test_type, us_id, tc_id, artifact, execution_time) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO execution_log (test_name, status, test_type, us_id, tc_id, artifact, screenshot_path, execution_time) " +
+                "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         try (Connection conn = getConnection(); PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setString(1, testName);
             ps.setString(2, status);
@@ -49,7 +47,8 @@ public class TestSuiteListener implements ITestListener {
             ps.setString(4, usId);
             ps.setString(5, tcId);
             ps.setString(6, artifact);
-            ps.setString(7, LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
+            ps.setString(7, screenshotPath);
+            ps.setString(8, LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
             ps.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -70,11 +69,14 @@ public class TestSuiteListener implements ITestListener {
             if (driver != null) {
                 byte[] screenshotBytes = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
                 String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss"));
-                path = ARTIFACTS_DIR + "screenshots/" + testName + "_" + timestamp + ".png";
+                path = ARTIFACTS_DIR + "screenshots/" + testName + "_FAILED_" + timestamp + ".png";
                 Files.write(Paths.get(path), screenshotBytes);
+
                 System.out.println("[Artifact] Screenshot saved: " + path);
             }
-        } catch (Exception ignored) {}
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return path;
     }
 
@@ -109,7 +111,7 @@ public class TestSuiteListener implements ITestListener {
         String status = result.isSuccess() ? "PASS" : "FAIL";
         String usId = result.getAttribute("US_ID") != null ? result.getAttribute("US_ID").toString() : "N/A";
 
-        String tcId = (result.getAttribute("TC_ID") != null) ? result.getAttribute("TC_ID").toString()
+        String tcId = result.getAttribute("TC_ID") != null ? result.getAttribute("TC_ID").toString()
                 : (result.getMethod().getDescription() != null && !result.getMethod().getDescription().isEmpty())
                 ? result.getMethod().getDescription()
                 : result.getMethod().getMethodName();
@@ -117,21 +119,12 @@ public class TestSuiteListener implements ITestListener {
         tcId = truncate(tcId, MAX_TC_ID_LENGTH);
         usId = truncate(usId, MAX_US_ID_LENGTH);
 
-        String artifactPath = saveScreenshot(testName);
-        insertExecutionLog(testName, status, "UI", usId, tcId, artifactPath);
-
-        String sql = "INSERT INTO ui_tests (us_id, test_case_id, name, status, execution_time, artifact) VALUES (?, ?, ?, ?, ?, ?)";
-        try (Connection conn = getConnection(); PreparedStatement ps = conn.prepareStatement(sql)) {
-            ps.setString(1, usId);
-            ps.setString(2, tcId);
-            ps.setString(3, testName);
-            ps.setString(4, status);
-            ps.setString(5, LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
-            ps.setString(6, artifactPath);
-            ps.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
+        String screenshotPath = "";
+        if (result.getStatus() == ITestResult.FAILURE) {
+            screenshotPath = saveScreenshot(testName);
         }
+
+        insertExecutionLog(testName, status, "UI", usId, tcId, "", screenshotPath);
     }
 
     // ---------- Save API Test Result ----------
@@ -140,7 +133,7 @@ public class TestSuiteListener implements ITestListener {
         String status = result.isSuccess() ? "PASS" : "FAIL";
         String usId = result.getAttribute("US_ID") != null ? result.getAttribute("US_ID").toString() : "N/A";
 
-        String tcId = (result.getAttribute("TC_ID") != null) ? result.getAttribute("TC_ID").toString()
+        String tcId = result.getAttribute("TC_ID") != null ? result.getAttribute("TC_ID").toString()
                 : (result.getMethod().getDescription() != null && !result.getMethod().getDescription().isEmpty())
                 ? result.getMethod().getDescription()
                 : result.getMethod().getMethodName();
@@ -151,23 +144,10 @@ public class TestSuiteListener implements ITestListener {
         String requestPayload = result.getAttribute("requestPayload") != null ? result.getAttribute("requestPayload").toString() : "{}";
         String responseBody = result.getAttribute("responseBody") != null ? result.getAttribute("responseBody").toString() : "{}";
 
+        // Save API JSON artifact
         String artifactPath = saveAPIArtifact(testName, requestPayload, responseBody);
-        insertExecutionLog(testName, status, "API", usId, tcId, artifactPath);
 
-        String sql = "INSERT INTO api_responses (us_id, test_case_id, name, status, execution_time, request_payload, response_body, artifact) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-        try (Connection conn = getConnection(); PreparedStatement ps = conn.prepareStatement(sql)) {
-            ps.setString(1, usId);
-            ps.setString(2, tcId);
-            ps.setString(3, testName);
-            ps.setString(4, status);
-            ps.setString(5, LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
-            ps.setString(6, requestPayload);
-            ps.setString(7, responseBody);
-            ps.setString(8, artifactPath);
-            ps.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        insertExecutionLog(testName, status, "API", usId, tcId, artifactPath, null);
     }
 
     // ---------- TestNG Hooks ----------
@@ -197,6 +177,5 @@ public class TestSuiteListener implements ITestListener {
     @Override
     public void onFinish(ITestContext context) {
         System.out.println("Test Suite Finished: " + context.getName());
-        // ✅ Removed report generation from listener
     }
 }

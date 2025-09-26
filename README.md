@@ -1,4 +1,4 @@
-# 🧪 AutomationFramework  biri
+# 🧪 AutomationFramework
 
 A robust and scalable Java-based automation testing framework designed for **parallel execution** of **UI** and **API** test suites.  
 It integrates powerful tools like **Selenium WebDriver**, **REST Assured**, and **TestNG**, while enabling **traceability**, **artifact storage**, and **report generation** — all in one place.
