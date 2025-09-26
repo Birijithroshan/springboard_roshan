@@ -10,7 +10,7 @@ public class DatabaseInserter {
     // MySQL credentials
     private static final String DB_URL = "jdbc:mysql://localhost:3306/automation_tests";
     private static final String DB_USER = "root";
-    private static final String DB_PASS = "Ck@709136";
+    private static final String DB_PASS = "roshan@2005";
 
     // ---------- Insert UI Test Result ----------
     public static void insertUiTestResult(String usId, String testCaseId, String name,
