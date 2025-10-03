@@ -10,7 +10,7 @@ public class DbResultListener implements ITestListener {
 
     private static final String DB_URL = "jdbc:mysql://localhost:3306/automation_tests?useSSL=false&serverTimezone=UTC";
     private static final String DB_USER = "root";
-    private static final String DB_PASS = "Ck@709136"; // move to env var in prod
+    private static final String DB_PASS = "roshan@2005"; // move to env var in prod
 
     private Connection getConn() throws SQLException {
         return DriverManager.getConnection(DB_URL, DB_USER, DB_PASS);

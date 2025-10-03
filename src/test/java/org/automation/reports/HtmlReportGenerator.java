@@ -10,7 +10,7 @@ public class HtmlReportGenerator {
 
     private static final String DB_URL = "jdbc:mysql://localhost:3306/automation_tests";
     private static final String DB_USER = "root";
-    private static final String DB_PASS = "Ck@709136";
+    private static final String DB_PASS = "roshan@2005";
 
     public static void generateReport() throws Exception {
         // ✅ Unique timestamp for file name
