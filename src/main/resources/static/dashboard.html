@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Test Analytics Dashboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .card { border-radius: 8px; padding: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.08); margin-bottom: 12px; }
+        .grid { display:flex; gap:12px; }
+        .grid .card { flex:1; }
+        table { width:100%; border-collapse: collapse; margin-top:12px;}
+        th,td { border:1px solid #ddd; padding:8px; text-align:left;}
+    </style>
+</head>
+<body>
+<h2>Regression Test Analytics</h2>
+<div class="grid">
+    <div class="card" id="summaryCard">Loading summary...</div>
+    <div class="card" id="trendCard">Loading trends...</div>
+</div>
+
+<h3>Recent Runs</h3>
+<table id="resultsTable">
+    <thead><tr><th>Suite</th><th>Run</th><th>Test</th><th>Status</th><th>Duration(ms)</th><th>Screenshot</th></tr></thead>
+    <tbody></tbody>
+</table>
+
+<script>
+    async function loadSummary() {
+      const res = await fetch('/analytics/summary');
+      const j = await res.json();
+      document.getElementById('summaryCard').innerHTML = `
+        <strong>Total:</strong> ${j.total} <br>
+        <strong>Passed:</strong> ${j.passed} <br>
+        <strong>Failed:</strong> ${j.failed} <br>
+        <strong>Pass Rate:</strong> ${j.passRate.toFixed(2)}% <br>
+        <strong>Avg Duration:</strong> ${Math.round(j.avgDurationMs)} ms
+      `;
+    }
+
+    async function loadTrends() {
+      const res = await fetch('/analytics/trends');
+      const data = await res.json();
+      let html = '<strong>Trends (last 7 days)</strong><br><ul>';
+      data.forEach(d => html += `<li>${d.date} — Passed: ${d.passed}, Failed: ${d.failed}</li>`);
+      html += '</ul>';
+      document.getElementById('trendCard').innerHTML = html;
+    }
+
+    async function loadRecent() {
+      // You can change suite ID or implement endpoint /results?limit=...
+      const res = await fetch('/analytics/results/'); // not applicable - we need a suiteId. Instead fetch last N rows via a new endpoint if needed.
+      // fallback: call /analytics/summary and then nothing. Ideally implement /analytics/recent in server.
+    }
+
+    // initial load
+    loadSummary();
+    loadTrends();
+</script>
+</body>
+</html>
+

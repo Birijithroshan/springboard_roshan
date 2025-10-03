@@ -160,8 +160,8 @@ AutomationFramework – Designed for scalable, traceable, and fully automated te
 
 License
 
-MIT License © 2025 [BIRIJITH ROSHAN]
+MIT License © 2025 [Chandrakant Kumar]
 
 Contact
 
-For questions or support, contact: [birijithroshan29@gmail.com]
+For questions or support, contact: [chandrakant2522006@gmail.com]

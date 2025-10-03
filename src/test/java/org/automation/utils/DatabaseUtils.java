@@ -4,9 +4,10 @@ import java.sql.*;
 
 public class DatabaseUtils {
 
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/automation_tests";
-    private static final String DB_USER = "root";
-    private static final String DB_PASS = "roshan@2005";
+    // Fetch DB details from environment variables (fallback to defaults)
+    private static final String DB_URL = System.getenv().getOrDefault("DB_URL", "jdbc:mysql://localhost:3306/automation_tests");
+    private static final String DB_USER = System.getenv().getOrDefault("DB_USER", "root");
+    private static final String DB_PASS = System.getenv().getOrDefault("DB_PASS", "Ck@709136");
 
     // ---------- Get Connection ----------
     public static Connection getConnection() throws SQLException {
@@ -55,7 +56,7 @@ public class DatabaseUtils {
         }
     }
 
-    // ---------- Insert Execution Log (✅ Now supports screenshot path) ----------
+    // ---------- Insert Execution Log ----------
     public static void insertExecutionLog(String testType, String usId, String testCaseId,
                                           String message, String level, String screenshotPath) {
         String sql = "INSERT INTO execution_logs (test_type, us_id, test_case_id, message, level, screenshot_path, log_time) " +
@@ -75,7 +76,7 @@ public class DatabaseUtils {
         }
     }
 
-    // ---------- Update Screenshot Path (optional helper) ----------
+    // ---------- Update Screenshot Path ----------
     public static void updateScreenshotPath(String testName, String screenshotPath) {
         String sql = "UPDATE execution_logs SET screenshot_path = ? WHERE test_name = ? ORDER BY log_time DESC LIMIT 1";
         try (Connection conn = getConnection();
@@ -89,7 +90,7 @@ public class DatabaseUtils {
         }
     }
 
-    // ---------- Clear All Tables (Handy for Dev / Debug) ----------
+    // ---------- Clear All Tables ----------
     public static void clearAllTables() {
         try (Connection conn = getConnection();
              Statement stmt = conn.createStatement()) {

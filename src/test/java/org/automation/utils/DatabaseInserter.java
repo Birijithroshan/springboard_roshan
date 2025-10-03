@@ -1,16 +1,12 @@
 package org.automation.utils;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class DatabaseInserter {
 
-    // MySQL credentials
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/automation_tests";
+    private static final String DB_URL = "jdbc:mysql://localhost:3306/automation_tests?useSSL=false&serverTimezone=UTC";
     private static final String DB_USER = "root";
-    private static final String DB_PASS = "roshan@2005";
+    private static final String DB_PASS = "Ck@709136";
 
     // ---------- Insert UI Test Result ----------
     public static void insertUiTestResult(String usId, String testCaseId, String name,
@@ -54,11 +50,13 @@ public class DatabaseInserter {
         }
     }
 
-    // ---------- Insert Execution Log (✅ now includes screenshot path) ----------
+    // ---------- Insert Execution Log ----------
     public static void insertExecutionLog(String testType, String usId, String testCaseId,
-                                          String message, String level, String screenshotPath) {
-        String sql = "INSERT INTO execution_logs (test_type, us_id, test_case_id, message, level, screenshot_path, log_time) " +
-                "VALUES (?, ?, ?, ?, ?, ?, NOW())";
+                                          String message, String level, String screenshotPath,
+                                          Timestamp startTime, Timestamp endTime, long duration) {
+        String sql = "INSERT INTO execution_logs " +
+                "(test_type, us_id, test_case_id, message, level, log_time, tc_id, screenshot_path, start_time, end_time, duration) " +
+                "VALUES (?, ?, ?, ?, ?, NOW(), ?, ?, ?, ?, ?)";
         try (Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASS);
              PreparedStatement stmt = conn.prepareStatement(sql)) {
 
@@ -67,21 +65,12 @@ public class DatabaseInserter {
             stmt.setString(3, testCaseId);
             stmt.setString(4, message);
             stmt.setString(5, level);
-            stmt.setString(6, screenshotPath);
-            stmt.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
+            stmt.setString(6, testCaseId); // tc_id
+            stmt.setString(7, screenshotPath);
+            stmt.setTimestamp(8, startTime);
+            stmt.setTimestamp(9, endTime);
+            stmt.setLong(10, duration);
 
-    // ---------- Update screenshot path for a test after capture (optional helper) ----------
-    public static void updateScreenshotPath(String testName, String screenshotPath) {
-        String sql = "UPDATE execution_logs SET screenshot_path = ? WHERE test_name = ? ORDER BY execution_time DESC LIMIT 1";
-        try (Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASS);
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
-
-            stmt.setString(1, screenshotPath);
-            stmt.setString(2, testName);
             stmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

@@ -1,0 +1,11 @@
+{
+  "testName": "testUpdatePost",
+  "timestamp": "20251001_182745",
+  "request": "{ \"id\":1, \"title\":\"updated\", \"body\":\"bar\", \"userId\":1 }",
+  "response": "{
+  \"id\": 1,
+  \"title\": \"updated\",
+  \"body\": \"bar\",
+  \"userId\": 1
+}"
+}

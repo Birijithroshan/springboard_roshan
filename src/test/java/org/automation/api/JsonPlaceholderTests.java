@@ -39,6 +39,20 @@ public class JsonPlaceholderTests extends ApiBaseTest {
         Reporter.getCurrentTestResult().setAttribute("responseBody", response.asString());
     }
 
+//    // Intentionally change the expected value to something incorrect:
+//    public void testGetSinglePost() {
+//        Reporter.getCurrentTestResult().setAttribute("US_ID", "US202");
+//
+//        Response response = given().contentType(ContentType.JSON)
+//                .when().get("/posts/1")
+//                // ❌ Intentionally wrong expected value (will fail)
+//                .then().statusCode(200).body("id", equalTo(999))
+//                .extract().response();
+//
+//        Reporter.getCurrentTestResult().setAttribute("requestPayload", "GET /posts/1");
+//        Reporter.getCurrentTestResult().setAttribute("responseBody", response.asString());
+//    }
+
     @Test(description = "Create a new post")
     public void testCreatePost() {
         Reporter.getCurrentTestResult().setAttribute("US_ID", "US203");

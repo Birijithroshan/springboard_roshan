@@ -15,6 +15,9 @@ public class BlazeDemoTests extends BaseTest {
         Reporter.getCurrentTestResult().setAttribute("US_ID", "US101");
         getDriver().get(UiTestMapper.HOME_URL);
         Assert.assertEquals(getDriver().getTitle(), "BlazeDemo");
+
+//        //Intentionally change the expected value to something incorrect:
+//        Assert.assertEquals(getDriver().getTitle(), "WrongTitle");
     }
 
     @Test(description = "Verify Departure and Destination fields exist on Home Page")

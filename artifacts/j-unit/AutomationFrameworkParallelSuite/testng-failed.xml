@@ -6,16 +6,7 @@
       <class name="org.automation.api.JsonPlaceholderTests">
         <methods>
           <include name="setup"/>
-          <include name="testPatchPost"/>
-          <include name="testGetCommentsForPost"/>
-          <include name="testCreateComment"/>
-          <include name="testDeletePost"/>
-          <include name="testGetSingleUser"/>
-          <include name="testGetAllPosts"/>
-          <include name="testGetAllUsers"/>
-          <include name="testUpdatePost"/>
           <include name="testGetSinglePost"/>
-          <include name="testCreatePost"/>
         </methods>
       </class> <!-- org.automation.api.JsonPlaceholderTests -->
     </classes>
@@ -24,18 +15,9 @@
     <classes>
       <class name="org.automation.ui.BlazeDemoTests">
         <methods>
-          <include name="testPurchaseFlight"/>
-          <include name="testFlightSearchNavigation"/>
-          <include name="testPurchasePageContainsForm"/>
-          <include name="testConfirmationPage"/>
-          <include name="testFillPurchaseForm"/>
-          <include name="testHomePageContainsDepartureAndDestination"/>
-          <include name="testSelectFirstFlight"/>
           <include name="testHomePageTitle"/>
           <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="testFlightSelectionPage"/>
-          <include name="testNavigateToHomePage"/>
         </methods>
       </class> <!-- org.automation.ui.BlazeDemoTests -->
     </classes>

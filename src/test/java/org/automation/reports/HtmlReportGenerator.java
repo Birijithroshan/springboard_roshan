@@ -13,8 +13,9 @@ public class HtmlReportGenerator {
     private static final String DB_PASS = "Ck@709136";
 
     public static void generateReport() throws Exception {
-        String fileName = "artifacts/reports/TestReport_" +
-                LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss")) + ".html";
+        // ✅ Unique timestamp for file name
+        String timestampForFile = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss"));
+        String fileName = "artifacts/reports/TestReport_" + timestampForFile + ".html";
 
         int passCount = 0, failCount = 0, skipCount = 0;
         StringBuilder tableRows = new StringBuilder();
