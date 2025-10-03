@@ -71,7 +71,7 @@ public class ParallelTestScheduler {
         testng.setXmlSuites(suites);
 
         // ✅ Set custom JUnit report output directory
-        testng.setOutputDirectory("D:\\DevTools\\IdeaProject\\AutomationFramework\\artifacts\\j-unit");
+        testng.setOutputDirectory("C:\\springboard_roshan\\artifacts\\j-unit");
 
         // ✅ Add reporters so that JUnit & TestNG XML reports are generated
         testng.addListener(new JUnitReportReporter());  // Generates JUnit-style XML
