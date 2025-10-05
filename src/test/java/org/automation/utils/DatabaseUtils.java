@@ -7,7 +7,7 @@ public class DatabaseUtils {
     // Fetch DB details from environment variables (fallback to defaults)
     private static final String DB_URL = System.getenv().getOrDefault("DB_URL", "jdbc:mysql://localhost:3306/automation_tests");
     private static final String DB_USER = System.getenv().getOrDefault("DB_USER", "root");
-    private static final String DB_PASS = System.getenv().getOrDefault("DB_PASS", "Ck@709136");
+    private static final String DB_PASS = System.getenv().getOrDefault("DB_PASS", "roshan@2005");
 
     // ---------- Get Connection ----------
     public static Connection getConnection() throws SQLException {
