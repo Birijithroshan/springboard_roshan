@@ -19,25 +19,7 @@ public class BaseTest {
     @BeforeMethod(alwaysRun = true)
     public void setUp() {
         ChromeOptions options = new ChromeOptions();
-
-        // ✅ Detect environment – if running in CI (GitHub Actions), use headless
-        String ciEnv = System.getenv("CI");
-        boolean isCI = ciEnv != null && ciEnv.equalsIgnoreCase("true");
-
-        if (isCI) {
-            System.out.println("🚀 Running in CI mode – enabling headless Chrome...");
-            options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage");
-        } else {
-            System.out.println("🖥️ Running locally – launching full Chrome browser...");
-            options.addArguments("--start-maximized");
-        }
-
-        // Optional: use CHROME_BIN and CHROMEDRIVER_BIN if provided by CI
-        String chromeBinary = System.getenv("CHROME_BIN");
-        if (chromeBinary != null && !chromeBinary.isEmpty()) {
-            options.setBinary(chromeBinary);
-        }
-
+        options.addArguments("--start-maximized");
         WebDriver webDriver = new ChromeDriver(options);
         DriverManager.setDriver(webDriver); // Save driver in ThreadLocal
     }
@@ -46,6 +28,9 @@ public class BaseTest {
         return DriverManager.getDriver();
     }
 
+    /**
+     * Tear down driver and capture screenshot ONLY on failure.
+     */
     @AfterMethod(alwaysRun = true)
     public void tearDown(ITestResult result) {
         WebDriver driver = DriverManager.getDriver();
@@ -62,7 +47,7 @@ public class BaseTest {
         }
     }
 
-    // Manual screenshot helper
+    // (Optional) Manual screenshot helper — not needed if ScreenshotUtils is used.
     public void takeScreenshot(String name) {
         WebDriver driver = DriverManager.getDriver();
         if (driver == null) return;

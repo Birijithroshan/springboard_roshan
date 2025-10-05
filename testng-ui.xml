@@ -1,14 +1,23 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="BlazeDemo_UI_Suite" parallel="tests" thread-count="10">
+<suite name="UI Test Suite" parallel="methods" thread-count="3" verbose="2">
+    <parameter name="browser" value="chrome"/>
+    <parameter name="headless" value="false"/>
 
     <listeners>
-        <listener class-name="org.automation.listeners.TestSuiteListener"/>
-        <listener class-name="org.automation.listeners.SuiteExecutionListener"/>
+        <listener class-name="org.automation.listeners.TestListener"/>
+        <listener class-name="org.automation.listeners.ScreenshotListener"/>
+        <listener class-name="org.automation.listeners.ReportListener"/>
     </listeners>
-    <test name="UI_Tests" preserve-order="false">
-        <packages>
-            <package name="org.automation.ui"/>
-        </packages>
+
+    <test name="BlazeDemo UI Tests">
+        <classes>
+            <class name="org.automation.ui.BlazeDemoTests"/>
+        </classes>
     </test>
 
+    <test name="Additional UI Tests">
+        <packages>
+            <package name="org.automation.ui.*"/>
+        </packages>
+    </test>
 </suite>

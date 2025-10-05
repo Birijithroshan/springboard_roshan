@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Manager - Test Automation Dashboard</title>
+    <link href="/webjars/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/dashboard.css" rel="stylesheet">
+    <script src="/webjars/jquery/3.7.1/jquery.min.js"></script>
+    <script src="/webjars/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/dashboard">
+                <i class="fas fa-vial"></i> Test Automation Dashboard
+            </a>
+            <div class="navbar-nav ms-auto">
+                <span class="navbar-text text-light">
+                    <i class="fas fa-user"></i> Test Manager
+                </span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid mt-4">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-3 col-lg-2">
+                <div class="list-group">
+                    <a href="/dashboard" class="list-group-item list-group-item-action">
+                        <i class="fas fa-chart-line"></i> Dashboard
+                    </a>
+                    <a href="/dashboard/test-manager" class="list-group-item list-group-item-action active">
+                        <i class="fas fa-play-circle"></i> Test Manager
+                    </a>
+                    <a href="/dashboard/reports" class="list-group-item list-group-item-action">
+                        <i class="fas fa-file-alt"></i> Reports
+                    </a>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-md-9 col-lg-10">
+                <h2 class="mb-4">
+                    <i class="fas fa-play-circle text-primary"></i> Test Manager
+                </h2>
+
+                <!-- Quick Actions Row -->
+                <div class="row mb-4">
+                    <div class="col-md-12">
+                        <div class="card shadow">
+                            <div class="card-header bg-primary text-white">
+                                <h5 class="mb-0"><i class="fas fa-rocket"></i> Quick Actions</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-3 mb-2">
+                                        <button class="btn btn-success btn-block w-100" onclick="quickRunTest('all')">
+                                            <i class="fas fa-play"></i> Run All Tests
+                                        </button>
+                                    </div>
+                                    <div class="col-md-3 mb-2">
+                                        <button class="btn btn-info btn-block w-100" onclick="quickRunTest('ui')">
+                                            <i class="fas fa-desktop"></i> Run UI Tests
+                                        </button>
+                                    </div>
+                                    <div class="col-md-3 mb-2">
+                                        <button class="btn btn-warning btn-block w-100" onclick="quickRunTest('api')">
+                                            <i class="fas fa-code"></i> Run API Tests
+                                        </button>
+                                    </div>
+                                    <div class="col-md-3 mb-2">
+                                        <button class="btn btn-secondary btn-block w-100" onclick="stopAllTests()">
+                                            <i class="fas fa-stop"></i> Stop All
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Test Execution Configuration -->
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">
+                            <i class="fas fa-cogs"></i> Test Execution Configuration
+                        </h6>
+                    </div>
+                    <div class="card-body">
+                        <form id="runTestsForm">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="mb-3">
+                                        <label for="testSuite" class="form-label">Test Suite</label>
+                                        <select class="form-select" id="testSuite" name="suite" required>
+                                            <option value="">Select Test Suite</option>
+                                            <option value="ui">UI Tests</option>
+                                            <option value="api">API Tests</option>
+                                            <option value="all">All Tests</option>
+                                            <option value="smoke">Smoke Tests</option>
+                                            <option value="regression">Regression Tests</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="mb-3">
+                                        <label for="browser" class="form-label">Browser (UI Tests)</label>
+                                        <select class="form-select" id="browser" name="browser">
+                                            <option value="chrome">Chrome</option>
+                                            <option value="firefox">Firefox</option>
+                                            <option value="edge">Edge</option>
+                                            <option value="safari">Safari</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="mb-3">
+                                        <label for="environment" class="form-label">Environment</label>
+                                        <select class="form-select" id="environment" name="environment">
+                                            <option value="dev">Development</option>
+                                            <option value="test">Test</option>
+                                            <option value="staging">Staging</option>
+                                            <option value="prod">Production</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="mb-3">
+                                        <label for="threadCount" class="form-label">Thread Count</label>
+                                        <input type="number" class="form-control" id="threadCount" name="threadCount" value="3" min="1" max="10">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="mb-3">
+                                        <label class="form-label">Options</label>
+                                        <div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="headless" name="headless">
+                                                <label class="form-check-label" for="headless">
+                                                    Headless Mode
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="captureScreenshots" name="captureScreenshots" checked>
+                                                <label class="form-check-label" for="captureScreenshots">
+                                                    Capture Screenshots
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="generateReports" name="generateReports" checked>
+                                                <label class="form-check-label" for="generateReports">
+                                                    Generate Reports
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="mb-3">
+                                        <label for="testParameters" class="form-label">Additional Parameters</label>
+                                        <textarea class="form-control" id="testParameters" name="testParameters" rows="3" placeholder="Enter additional test parameters (key=value format, one per line)"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-play"></i> Execute Tests
+                            </button>
+                            <button type="button" class="btn btn-secondary ms-2" onclick="resetForm()">
+                                <i class="fas fa-undo"></i> Reset
+                            </button>
+                        </form>
+
+                        <!-- Execution Status -->
+                        <div id="executionStatus" class="mt-4" style="display: none;">
+                            <div class="alert alert-info">
+                                <div class="d-flex align-items-center">
+                                    <div class="spinner-border spinner-border-sm text-primary me-2" role="status">
+                                        <span class="visually-hidden">Loading...</span>
+                                    </div>
+                                    <div>
+                                        <strong>Test execution in progress...</strong>
+                                        <div id="executionDetails" class="small mt-1">
+                                            Execution ID: <span id="executionId"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="progress mb-3">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated"
+                                     role="progressbar" style="width: 0%" id="progressBar"></div>
+                            </div>
+                            <div id="currentTestInfo" class="small text-muted"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Available Tests Section -->
+                <div class="row">
+                    <!-- UI Test Classes -->
+                    <div class="col-md-6">
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-primary">
+                                    <i class="fas fa-desktop"></i> UI Test Classes
+                                </h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="list-group" id="uiTestsList">
+                                    <div th:each="test : ${uiTests}" class="list-group-item d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <span class="fw-bold" th:text="${test}">BlazeDemoTests</span>
+                                            <div class="text-muted small">UI Automation Test</div>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-sm btn-outline-primary me-1 run-single-test-btn"
+                                                    th:data-test-type="ui" th:data-test="${test}">
+                                                <i class="fas fa-play"></i> Run
+                                            </button>
+                                            <button class="btn btn-sm btn-outline-info view-test-details-btn"
+                                                    th:data-test-type="ui" th:data-test="${test}">
+                                                <i class="fas fa-info"></i> Info
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div th:if="${#lists.isEmpty(uiTests)}" class="list-group-item text-center text-muted">
+                                        <i class="fas fa-exclamation-triangle"></i> No UI test classes found
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <button class="btn btn-sm btn-success" onclick="refreshTestList('ui')">
+                                        <i class="fas fa-sync"></i> Refresh List
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- API Test Classes -->
+                    <div class="col-md-6">
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-primary">
+                                    <i class="fas fa-code"></i> API Test Classes
+                                </h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="list-group" id="apiTestsList">
+                                    <div th:each="test : ${apiTests}" class="list-group-item d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <span class="fw-bold" th:text="${test}">JsonPlaceholderTests</span>
+                                            <div class="text-muted small">API Integration Test</div>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-sm btn-outline-primary me-1 run-single-test-btn"
+                                                    th:data-test-type="api" th:data-test="${test}">
+                                                <i class="fas fa-play"></i> Run
+                                            </button>
+                                            <button class="btn btn-sm btn-outline-info view-test-details-btn"
+                                                    th:data-test-type="api" th:data-test="${test}">
+                                                <i class="fas fa-info"></i> Info
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div th:if="${#lists.isEmpty(apiTests)}" class="list-group-item text-center text-muted">
+                                        <i class="fas fa-exclamation-triangle"></i> No API test classes found
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <button class="btn btn-sm btn-success" onclick="refreshTestList('api')">
+                                        <i class="fas fa-sync"></i> Refresh List
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Test Management Section -->
+                <div class="row">
+                    <!-- Upload New Test -->
+                    <div class="col-md-6">
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-primary">
+                                    <i class="fas fa-upload"></i> Upload New Test
+                                </h6>
+                            </div>
+                            <div class="card-body">
+                                <form id="uploadTestForm" enctype="multipart/form-data">
+                                    <div class="mb-3">
+                                        <label for="testFile" class="form-label">Test File (.java)</label>
+                                        <input type="file" class="form-control" id="testFile" name="file" accept=".java" required>
+                                        <div class="form-text">Upload Java test files only</div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="testType" class="form-label">Test Type</label>
+                                        <select class="form-select" id="testType" name="testType" required>
+                                            <option value="">Select Test Type</option>
+                                            <option value="ui">UI Test</option>
+                                            <option value="api">API Test</option>
+                                            <option value="integration">Integration Test</option>
+                                            <option value="unit">Unit Test</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="testDescription" class="form-label">Description</label>
+                                        <textarea class="form-control" id="testDescription" name="description" rows="2" placeholder="Brief description of the test"></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-success">
+                                        <i class="fas fa-upload"></i> Upload Test
+                                    </button>
+                                    <button type="button" class="btn btn-secondary" onclick="clearUploadForm()">
+                                        <i class="fas fa-times"></i> Clear
+                                    </button>
+                                </form>
+
+                                <div id="uploadStatus" class="mt-3" style="display: none;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Test Scheduler -->
+                    <div class="col-md-6">
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-primary">
+                                    <i class="fas fa-clock"></i> Test Scheduler
+                                </h6>
+                            </div>
+                            <div class="card-body">
+                                <form id="scheduleTestForm">
+                                    <div class="mb-3">
+                                        <label for="scheduleSuite" class="form-label">Test Suite</label>
+                                        <select class="form-select" id="scheduleSuite" name="suite" required>
+                                            <option value="">Select Test Suite</option>
+                                            <option value="ui">UI Tests</option>
+                                            <option value="api">API Tests</option>
+                                            <option value="all">All Tests</option>
+                                            <option value="smoke">Smoke Tests</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="scheduleTime" class="form-label">Schedule Time</label>
+                                        <input type="datetime-local" class="form-control" id="scheduleTime" name="scheduleTime" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="scheduleFrequency" class="form-label">Frequency</label>
+                                        <select class="form-select" id="scheduleFrequency" name="frequency">
+                                            <option value="once">Run Once</option>
+                                            <option value="daily">Daily</option>
+                                            <option value="weekly">Weekly</option>
+                                            <option value="monthly">Monthly</option>
+                                        </select>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="fas fa-calendar-plus"></i> Schedule Test
+                                    </button>
+                                </form>
+
+                                <!-- Scheduled Tests List -->
+                                <div class="mt-4">
+                                    <h6 class="fw-bold">Scheduled Tests</h6>
+                                    <div id="scheduledTestsList" class="list-group list-group-flush">
+                                        <div class="list-group-item d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <span class="fw-bold">UI Tests</span>
+                                                <div class="small text-muted">Daily at 2:00 AM</div>
+                                            </div>
+                                            <button class="btn btn-sm btn-outline-danger" onclick="removeSchedule(1)">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Executions -->
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">
+                            <i class="fas fa-history"></i> Recent Test Executions
+                        </h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="recentExecutionsTable">
+                                <thead>
+                                    <tr>
+                                        <th>Execution ID</th>
+                                        <th>Test Suite</th>
+                                        <th>Status</th>
+                                        <th>Started</th>
+                                        <th>Duration</th>
+                                        <th>Results</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>#12345</td>
+                                        <td><span class="badge bg-info">UI Tests</span></td>
+                                        <td><span class="badge bg-success">Completed</span></td>
+                                        <td>2024-10-02 14:30:00</td>
+                                        <td>5m 32s</td>
+                                        <td>
+                                            <span class="text-success">15 Passed</span> |
+                                            <span class="text-danger">2 Failed</span>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-primary" onclick="viewExecutionDetails('12345')">
+                                                <i class="fas fa-eye"></i> View
+                                            </button>
+                                            <button class="btn btn-sm btn-outline-secondary" onclick="rerunExecution('12345')">
+                                                <i class="fas fa-redo"></i> Rerun
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <!-- More rows will be dynamically loaded -->
+                                </tbody>
+                            </table>
+                        </div>
+                        <nav>
+                            <ul class="pagination pagination-sm justify-content-center">
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#" onclick="loadPage(1)">Previous</a>
+                                </li>
+                                <li class="page-item active">
+                                    <a class="page-link" href="#" onclick="loadPage(1)">1</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#" onclick="loadPage(2)">2</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#" onclick="loadPage(2)">Next</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Test Details Modal -->
+    <div class="modal fade" id="testDetailsModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Test Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="testDetailsContent">
+                    <!-- Content will be loaded dynamically -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="runTestFromModal()">Run Test</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Font Awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+    <script src="/js/test-manager.js"></script>
+</body>
+</html>

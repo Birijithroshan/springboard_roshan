@@ -1,0 +1,229 @@
+/* Custom Dashboard CSS */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fc;
+}
+
+/* Sidebar styling */
+.list-group-item {
+    border: none;
+    border-radius: 0.35rem;
+    margin-bottom: 0.25rem;
+}
+
+.list-group-item.active {
+    background-color: #4e73df;
+    border-color: #4e73df;
+}
+
+.list-group-item:hover {
+    background-color: #f8f9fc;
+    color: #5a5c69;
+}
+
+/* Card styling */
+.card {
+    border: none;
+    border-radius: 0.35rem;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+}
+
+.card-header {
+    background-color: #f8f9fc;
+    border-bottom: 1px solid #e3e6f0;
+}
+
+/* Border left cards for stats */
+.border-left-primary {
+    border-left: 0.25rem solid #4e73df !important;
+}
+
+.border-left-success {
+    border-left: 0.25rem solid #1cc88a !important;
+}
+
+.border-left-danger {
+    border-left: 0.25rem solid #e74a3b !important;
+}
+
+.border-left-warning {
+    border-left: 0.25rem solid #f6c23e !important;
+}
+
+/* Text styling */
+.text-xs {
+    font-size: 0.7rem;
+}
+
+.text-gray-300 {
+    color: #dddfeb !important;
+}
+
+.text-gray-800 {
+    color: #5a5c69 !important;
+}
+
+/* Button styling */
+.btn {
+    border-radius: 0.35rem;
+    font-size: 0.85rem;
+}
+
+.btn-outline-primary:hover {
+    background-color: #4e73df;
+    border-color: #4e73df;
+}
+
+/* Table styling */
+.table {
+    color: #5a5c69;
+}
+
+.table th {
+    background-color: #f8f9fc;
+    border-top: none;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: #6e707e;
+    text-transform: uppercase;
+}
+
+/* Progress bar styling */
+.progress {
+    height: 0.5rem;
+    border-radius: 0.35rem;
+}
+
+.progress-bar {
+    border-radius: 0.35rem;
+}
+
+/* Badge styling */
+.badge {
+    font-size: 0.75rem;
+    padding: 0.4em 0.6em;
+}
+
+/* Screenshot thumbnail styling */
+.screenshot-thumbnail {
+    transition: transform 0.2s ease-in-out;
+}
+
+.screenshot-thumbnail:hover {
+    transform: scale(1.05);
+}
+
+/* Form styling */
+.form-control, .form-select {
+    border-radius: 0.35rem;
+    border: 1px solid #d1d3e2;
+    font-size: 0.85rem;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #4e73df;
+    box-shadow: 0 0 0 0.2rem rgba(78, 115, 223, 0.25);
+}
+
+/* Alert styling */
+.alert {
+    border-radius: 0.35rem;
+    border: none;
+}
+
+.alert-info {
+    background-color: #d6edff;
+    color: #0c5460;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.alert-warning {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/* Modal styling */
+.modal-content {
+    border-radius: 0.35rem;
+    border: none;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+}
+
+.modal-header {
+    border-bottom: 1px solid #e3e6f0;
+}
+
+.modal-footer {
+    border-top: 1px solid #e3e6f0;
+}
+
+/* Navigation styling */
+.navbar-brand {
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+/* Chart container styling */
+canvas {
+    max-height: 400px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .col-md-3.col-lg-2 {
+        margin-bottom: 1rem;
+    }
+
+    .card-body {
+        padding: 1rem;
+    }
+
+    .btn-sm {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.5rem;
+    }
+}
+
+/* Animation classes */
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Loading spinner */
+.spinner-border-sm {
+    width: 1rem;
+    height: 1rem;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}

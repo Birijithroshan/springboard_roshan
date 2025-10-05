@@ -22,7 +22,7 @@ public class TestSuiteListener implements ITestListener {
 
     private static final String DB_URL = "jdbc:mysql://localhost:3306/automation_tests";
     private static final String DB_USER = "root";
-    private static final String DB_PASS = "roshan@2005";
+    private static final String DB_PASS = "Ck@709136";
     private static final String ARTIFACTS_DIR = "artifacts/";
 
     private static final int MAX_US_ID_LENGTH = 50;

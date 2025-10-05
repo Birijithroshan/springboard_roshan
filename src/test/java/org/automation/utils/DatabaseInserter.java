@@ -6,7 +6,7 @@ public class DatabaseInserter {
 
     private static final String DB_URL = "jdbc:mysql://localhost:3306/automation_tests?useSSL=false&serverTimezone=UTC";
     private static final String DB_USER = "root";
-    private static final String DB_PASS = "roshan@2005";
+    private static final String DB_PASS = "Ck@709136";
 
     // ---------- Insert UI Test Result ----------
     public static void insertUiTestResult(String usId, String testCaseId, String name,
@@ -74,6 +74,31 @@ public class DatabaseInserter {
             stmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
+        }
+    }
+
+    // ---------- Insert General Test Result (used by TestListener) ----------
+    public static void insertTestResult(String className, String testName, String status,
+                                      String timestamp, long duration, String errorMessage, String screenshotPath) {
+        String sql = "INSERT INTO test_results (class_name, test_name, status, timestamp, duration_ms, error_message, screenshot_path) " +
+                    "VALUES (?, ?, ?, ?, ?, ?, ?)";
+        try (Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASS);
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setString(1, className);
+            stmt.setString(2, testName);
+            stmt.setString(3, status);
+            stmt.setString(4, timestamp);
+            stmt.setLong(5, duration);
+            stmt.setString(6, errorMessage);
+            stmt.setString(7, screenshotPath);
+            stmt.executeUpdate();
+
+        } catch (SQLException e) {
+            // If database connection fails, log to console instead
+            System.err.println("Failed to insert test result to database: " + e.getMessage());
+            System.out.println("Test Result - Class: " + className + ", Test: " + testName +
+                             ", Status: " + status + ", Duration: " + duration + "ms");
         }
     }
 }
