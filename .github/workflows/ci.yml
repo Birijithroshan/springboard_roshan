@@ -12,7 +12,7 @@ env:
   DB_PORT: 3306
   DB_NAME: automation_tests
   DB_USER: root
-  DB_PASS: Ck@709136
+  DB_PASS: roshan@2005
   CI: true
 
 jobs:
@@ -41,7 +41,7 @@ jobs:
       - uses: actions/setup-java@v3
         with:
           distribution: temurin
-          java-version: 23
+          java-version: 24
 
       - name: 📦 Cache Maven
         uses: actions/cache@v3
