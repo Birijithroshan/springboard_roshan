@@ -1,20 +1,14 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="API Test Suite" parallel="methods" thread-count="5" verbose="2">
+<suite name="JsonPlaceholder_API_Suite" parallel="tests" thread-count="10">
 
     <listeners>
-        <listener class-name="org.automation.listeners.TestListener"/>
-        <listener class-name="org.automation.listeners.ApiReportListener"/>
+        <listener class-name="org.automation.listeners.TestSuiteListener"/>
+        <listener class-name="org.automation.listeners.SuiteExecutionListener"/>
     </listeners>
-
-    <test name="JsonPlaceholder API Tests">
-        <classes>
-            <class name="org.automation.api.JsonPlaceholderTests"/>
-        </classes>
-    </test>
-
-    <test name="Additional API Tests">
+    <test name="API_Tests" preserve-order="false">
         <packages>
-            <package name="org.automation.api.*"/>
+            <package name="org.automation.api"/>
         </packages>
     </test>
+
 </suite>

@@ -1,0 +1,12 @@
+{
+  "testName": "testCreateComment",
+  "timestamp": "20251006_154833",
+  "request": "{ \"postId\":1, \"name\":\"Test\", \"email\":\"test@test.com\", \"body\":\"Test comment\" }",
+  "response": "{
+  \"postId\": 1,
+  \"name\": \"Test\",
+  \"email\": \"test@test.com\",
+  \"body\": \"Test comment\",
+  \"id\": 501
+}"
+}

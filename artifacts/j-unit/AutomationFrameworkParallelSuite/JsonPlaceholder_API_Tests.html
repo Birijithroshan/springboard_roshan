@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>JsonPlaceholder_API_Tests</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>9/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>10/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Oct 01 20:27:39 IST 2025</td>
+<td>Started on:</td><td>Mon Oct 06 16:53:41 IST 2025</td>
 </tr>
-<tr><td>Total time:</td><td>10 seconds (10976 ms)</td>
+<tr><td>Total time:</td><td>5 seconds (5789 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,94 +67,6 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td><b>Attribute(s)</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
-<td title='org.automation.api.JsonPlaceholderTests.testGetSinglePost()'><b>testGetSinglePost</b><br>Test class: org.automation.api.JsonPlaceholderTests<br>Test method: Get single post by ID</td>
-<td><div><pre>java.lang.AssertionError: 1 expectation failed.
-JSON path id doesn&apos;t match.
-Expected: &lt;999&gt;
-  Actual: &lt;1&gt;
-
-	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:108)
-	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:57)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
-	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:512)
-	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$9.call(Unknown Source)
-	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:696)
-	at io.restassured.internal.ResponseSpecificationImpl.this$2$validateResponseIfRequired(ResponseSpecificationImpl.groovy)
-	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
-	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:198)
-	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:62)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:183)
-	at io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:270)
-	at io.restassured.specification.ResponseSpecification$body$4.callCurrent(Unknown Source)
-	at io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:117)
-	at io.restassured.internal.ValidatableResponseOptionsImpl.body(ValidatableResponseOptionsImpl.java:244)
-	at org.automation.api.JsonPlaceholderTests.testGetSinglePost(JsonPlaceholderTests.java:49)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1575)
-... Removed 17 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace440749723", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace440749723'><pre>java.lang.AssertionError: 1 expectation failed.
-JSON path id doesn&apos;t match.
-Expected: &lt;999&gt;
-  Actual: &lt;1&gt;
-
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
-	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
-	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:108)
-	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:57)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
-	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:512)
-	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$9.call(Unknown Source)
-	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:696)
-	at io.restassured.internal.ResponseSpecificationImpl.this$2$validateResponseIfRequired(ResponseSpecificationImpl.groovy)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
-	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:198)
-	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:62)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:183)
-	at io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:270)
-	at io.restassured.specification.ResponseSpecification$body$4.callCurrent(Unknown Source)
-	at io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:117)
-	at io.restassured.internal.ValidatableResponseOptionsImpl.body(ValidatableResponseOptionsImpl.java:244)
-	at org.automation.api.JsonPlaceholderTests.testGetSinglePost(JsonPlaceholderTests.java:49)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1575)
-</pre></div></td>
-<td>9</td>
-<td>org.automation.api.JsonPlaceholderTests@318ba8c8</td></tr>
-</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -166,48 +78,53 @@ Expected: &lt;999&gt;
 <tr>
 <td title='org.automation.api.JsonPlaceholderTests.testDeletePost()'><b>testDeletePost</b><br>Test class: org.automation.api.JsonPlaceholderTests<br>Test method: Delete a post</td>
 <td></td>
-<td>4</td>
-<td>org.automation.api.JsonPlaceholderTests@318ba8c8</td></tr>
-<tr>
-<td title='org.automation.api.JsonPlaceholderTests.testUpdatePost()'><b>testUpdatePost</b><br>Test class: org.automation.api.JsonPlaceholderTests<br>Test method: Update an existing post</td>
-<td></td>
-<td>9</td>
-<td>org.automation.api.JsonPlaceholderTests@318ba8c8</td></tr>
-<tr>
-<td title='org.automation.api.JsonPlaceholderTests.testGetAllUsers()'><b>testGetAllUsers</b><br>Test class: org.automation.api.JsonPlaceholderTests<br>Test method: Get all users</td>
-<td></td>
-<td>9</td>
-<td>org.automation.api.JsonPlaceholderTests@318ba8c8</td></tr>
-<tr>
-<td title='org.automation.api.JsonPlaceholderTests.testCreatePost()'><b>testCreatePost</b><br>Test class: org.automation.api.JsonPlaceholderTests<br>Test method: Create a new post</td>
-<td></td>
-<td>9</td>
-<td>org.automation.api.JsonPlaceholderTests@318ba8c8</td></tr>
-<tr>
-<td title='org.automation.api.JsonPlaceholderTests.testPatchPost()'><b>testPatchPost</b><br>Test class: org.automation.api.JsonPlaceholderTests<br>Test method: Patch an existing post</td>
-<td></td>
-<td>9</td>
-<td>org.automation.api.JsonPlaceholderTests@318ba8c8</td></tr>
-<tr>
-<td title='org.automation.api.JsonPlaceholderTests.testCreateComment()'><b>testCreateComment</b><br>Test class: org.automation.api.JsonPlaceholderTests<br>Test method: Create a comment</td>
-<td></td>
-<td>9</td>
-<td>org.automation.api.JsonPlaceholderTests@318ba8c8</td></tr>
-<tr>
-<td title='org.automation.api.JsonPlaceholderTests.testGetCommentsForPost()'><b>testGetCommentsForPost</b><br>Test class: org.automation.api.JsonPlaceholderTests<br>Test method: Get comments for a post</td>
-<td></td>
-<td>9</td>
-<td>org.automation.api.JsonPlaceholderTests@318ba8c8</td></tr>
-<tr>
-<td title='org.automation.api.JsonPlaceholderTests.testGetSingleUser()'><b>testGetSingleUser</b><br>Test class: org.automation.api.JsonPlaceholderTests<br>Test method: Get single user by ID</td>
-<td></td>
-<td>9</td>
-<td>org.automation.api.JsonPlaceholderTests@318ba8c8</td></tr>
+<td>3</td>
+<td>org.automation.api.JsonPlaceholderTests@5ad851c9</td></tr>
 <tr>
 <td title='org.automation.api.JsonPlaceholderTests.testGetAllPosts()'><b>testGetAllPosts</b><br>Test class: org.automation.api.JsonPlaceholderTests<br>Test method: Get all posts</td>
 <td></td>
-<td>9</td>
-<td>org.automation.api.JsonPlaceholderTests@318ba8c8</td></tr>
+<td>5</td>
+<td>org.automation.api.JsonPlaceholderTests@5ad851c9</td></tr>
+<tr>
+<td title='org.automation.api.JsonPlaceholderTests.testCreateComment()'><b>testCreateComment</b><br>Test class: org.automation.api.JsonPlaceholderTests<br>Test method: Create a comment</td>
+<td></td>
+<td>5</td>
+<td>org.automation.api.JsonPlaceholderTests@5ad851c9</td></tr>
+<tr>
+<td title='org.automation.api.JsonPlaceholderTests.testCreatePost()'><b>testCreatePost</b><br>Test class: org.automation.api.JsonPlaceholderTests<br>Test method: Create a new post</td>
+<td></td>
+<td>5</td>
+<td>org.automation.api.JsonPlaceholderTests@5ad851c9</td></tr>
+<tr>
+<td title='org.automation.api.JsonPlaceholderTests.testGetAllUsers()'><b>testGetAllUsers</b><br>Test class: org.automation.api.JsonPlaceholderTests<br>Test method: Get all users</td>
+<td></td>
+<td>5</td>
+<td>org.automation.api.JsonPlaceholderTests@5ad851c9</td></tr>
+<tr>
+<td title='org.automation.api.JsonPlaceholderTests.testGetSinglePost()'><b>testGetSinglePost</b><br>Test class: org.automation.api.JsonPlaceholderTests<br>Test method: Get single post by ID</td>
+<td></td>
+<td>5</td>
+<td>org.automation.api.JsonPlaceholderTests@5ad851c9</td></tr>
+<tr>
+<td title='org.automation.api.JsonPlaceholderTests.testPatchPost()'><b>testPatchPost</b><br>Test class: org.automation.api.JsonPlaceholderTests<br>Test method: Patch an existing post</td>
+<td></td>
+<td>5</td>
+<td>org.automation.api.JsonPlaceholderTests@5ad851c9</td></tr>
+<tr>
+<td title='org.automation.api.JsonPlaceholderTests.testGetSingleUser()'><b>testGetSingleUser</b><br>Test class: org.automation.api.JsonPlaceholderTests<br>Test method: Get single user by ID</td>
+<td></td>
+<td>5</td>
+<td>org.automation.api.JsonPlaceholderTests@5ad851c9</td></tr>
+<tr>
+<td title='org.automation.api.JsonPlaceholderTests.testUpdatePost()'><b>testUpdatePost</b><br>Test class: org.automation.api.JsonPlaceholderTests<br>Test method: Update an existing post</td>
+<td></td>
+<td>5</td>
+<td>org.automation.api.JsonPlaceholderTests@5ad851c9</td></tr>
+<tr>
+<td title='org.automation.api.JsonPlaceholderTests.testGetCommentsForPost()'><b>testGetCommentsForPost</b><br>Test class: org.automation.api.JsonPlaceholderTests<br>Test method: Get comments for a post</td>
+<td></td>
+<td>5</td>
+<td>org.automation.api.JsonPlaceholderTests@5ad851c9</td></tr>
 </table><p>
 </body>
 </html>

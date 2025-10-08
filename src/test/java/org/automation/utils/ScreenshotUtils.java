@@ -32,34 +32,4 @@ public class ScreenshotUtils {
             return null;
         }
     }
-
-    // Method referenced in listeners
-    public static String takeScreenshot(String testName) {
-        try {
-            // Try to get driver from thread local or driver manager
-            WebDriver driver = getActiveDriver();
-            if (driver != null) {
-                return capture(driver, testName);
-            } else {
-                System.err.println("No active WebDriver found for screenshot: " + testName);
-                return null;
-            }
-        } catch (Exception e) {
-            System.err.println("Error taking screenshot: " + e.getMessage());
-            return null;
-        }
-    }
-
-    // Helper method to get active driver (implement based on your driver management)
-    private static WebDriver getActiveDriver() {
-        try {
-            // Try to get driver from DriverManager if it exists
-            Class<?> driverManagerClass = Class.forName("org.automation.ui.DriverManager");
-            java.lang.reflect.Method getMethod = driverManagerClass.getMethod("getDriver");
-            return (WebDriver) getMethod.invoke(null);
-        } catch (Exception e) {
-            // Fallback - could implement other ways to get driver
-            return null;
-        }
-    }
 }

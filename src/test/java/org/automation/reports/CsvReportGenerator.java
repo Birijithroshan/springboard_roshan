@@ -2,25 +2,23 @@ package org.automation.reports;
 
 import java.io.FileWriter;
 import java.sql.*;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+import org.automation.utils.ReportUtils;
 
 public class CsvReportGenerator {
 
     private static final String DB_URL = "jdbc:mysql://localhost:3306/automation_tests";
     private static final String DB_USER = "root";
-    private static final String DB_PASS = "roshan@2005";
+    private static final String DB_PASS = "Ck@709136";
 
     public static void generateReport() throws Exception {
-        String fileName = "artifacts/reports/TestReport_" +
-                LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss")) + ".csv";
+        String timestamp = ReportUtils.getTimestamp();
+        String fileName = "artifacts/reports/CSV_Report_" + timestamp + ".csv";
 
         try (FileWriter writer = new FileWriter(fileName);
              Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASS);
              Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery("SELECT * FROM execution_log")) {
 
-            // Write header
             writer.append("ID,TestName,Status,Type,US_ID,TC_ID,Artifact,ExecutionTime\n");
 
             while (rs.next()) {
@@ -35,10 +33,9 @@ public class CsvReportGenerator {
             }
         }
 
-        System.out.println("CSV report generated: " + fileName);
+        System.out.println("✅ CSV report generated: " + fileName);
     }
 
-    // ✅ Wrapper method for compatibility
     public static void generateCsvReport() throws Exception {
         generateReport();
     }

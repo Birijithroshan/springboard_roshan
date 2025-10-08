@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-AutomationFrameworkParallelSuite" class="navigator-link">
-              <span class="suite-name border-failed">AutomationFrameworkParallelSuite</span>
+              <span class="suite-name border-passed">AutomationFrameworkParallelSuite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -92,26 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">20 methods, 2 failed,   18 passed</span>
-                  </li>
-                  <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-AutomationFrameworkParallelSuite" class="hide-methods failed suite-AutomationFrameworkParallelSuite"> (hide)</a> <!-- hide-methods failed suite-AutomationFrameworkParallelSuite -->
-                      <a href="#" panel-name="suite-AutomationFrameworkParallelSuite" class="show-methods failed suite-AutomationFrameworkParallelSuite"> (show)</a> <!-- show-methods failed suite-AutomationFrameworkParallelSuite -->
-                    </span>
-                    <div class="method-list-content failed suite-AutomationFrameworkParallelSuite">
-                      <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-AutomationFrameworkParallelSuite" title="org.automation.api.JsonPlaceholderTests" class="method navigator-link" hash-for-method="testGetSinglePost">testGetSinglePost</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-AutomationFrameworkParallelSuite" title="org.automation.ui.BlazeDemoTests" class="method navigator-link" hash-for-method="testHomePageTitle">testHomePageTitle</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content failed suite-AutomationFrameworkParallelSuite -->
+                    <span class="method-stats">20 methods,   20 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -172,12 +153,22 @@
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-AutomationFrameworkParallelSuite" title="org.automation.api.JsonPlaceholderTests" class="method navigator-link" hash-for-method="testGetSinglePost">testGetSinglePost</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-AutomationFrameworkParallelSuite" title="org.automation.api.JsonPlaceholderTests" class="method navigator-link" hash-for-method="testGetSingleUser">testGetSingleUser</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-AutomationFrameworkParallelSuite" title="org.automation.ui.BlazeDemoTests" class="method navigator-link" hash-for-method="testHomePageContainsDepartureAndDestination">testHomePageContainsDepartureAndDestination</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-AutomationFrameworkParallelSuite" title="org.automation.ui.BlazeDemoTests" class="method navigator-link" hash-for-method="testHomePageTitle">testHomePageTitle</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -222,79 +213,6 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-AutomationFrameworkParallelSuite" class="panel AutomationFrameworkParallelSuite">
-          <div class="suite-AutomationFrameworkParallelSuite-class-failed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">org.automation.api.JsonPlaceholderTests</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="testGetSinglePost">
-                  </a> <!-- testGetSinglePost -->
-                  <span class="method-name">testGetSinglePost</span>
-                  <div class="stack-trace">java.lang.AssertionError: 1 expectation failed.
-JSON path id doesn&apos;t match.
-Expected: &lt;999&gt;
-  Actual: &lt;1&gt;
-
-	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:108)
-	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:57)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
-	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:512)
-	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$9.call(Unknown Source)
-	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:696)
-	at io.restassured.internal.ResponseSpecificationImpl.this$2$validateResponseIfRequired(ResponseSpecificationImpl.groovy)
-	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
-	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:198)
-	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:62)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:183)
-	at io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:270)
-	at io.restassured.specification.ResponseSpecification$body$4.callCurrent(Unknown Source)
-	at io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:117)
-	at io.restassured.internal.ValidatableResponseOptionsImpl.body(ValidatableResponseOptionsImpl.java:244)
-	at org.automation.api.JsonPlaceholderTests.testGetSinglePost(JsonPlaceholderTests.java:49)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1575)
-... Removed 17 stack frames
-</div> <!-- stack-trace -->
-                  <em>
-(Get single post by ID)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-AutomationFrameworkParallelSuite-class-failed -->
-          <div class="suite-AutomationFrameworkParallelSuite-class-failed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">org.automation.ui.BlazeDemoTests</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="testHomePageTitle">
-                  </a> <!-- testHomePageTitle -->
-                  <span class="method-name">testHomePageTitle</span>
-                  <div class="stack-trace">java.lang.AssertionError: expected [WrongTitle] but found [BlazeDemo]
-	at org.automation.ui.BlazeDemoTests.testHomePageTitle(BlazeDemoTests.java:20)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1575)
-... Removed 17 stack frames
-</div> <!-- stack-trace -->
-                  <em>
-(Verify Home Page Title)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-AutomationFrameworkParallelSuite-class-failed -->
           <div class="suite-AutomationFrameworkParallelSuite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -353,6 +271,15 @@ Expected: &lt;999&gt;
                   <span class="method-name">testGetCommentsForPost</span>
                   <em>
 (Get comments for a post)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testGetSinglePost">
+                  </a> <!-- testGetSinglePost -->
+                  <span class="method-name">testGetSinglePost</span>
+                  <em>
+(Get single post by ID)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -433,6 +360,15 @@ Expected: &lt;999&gt;
                   <span class="method-name">testHomePageContainsDepartureAndDestination</span>
                   <em>
 (Verify Departure and Destination fields exist on Home Page)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testHomePageTitle">
+                  </a> <!-- testHomePageTitle -->
+                  <span class="method-name">testHomePageTitle</span>
+                  <em>
+(Verify Home Page Title)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -534,90 +470,90 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(20);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'testGetSinglePost')
-data.setCell(0, 2, 'org.automation.api.JsonPlaceholderTests')
-data.setCell(0, 3, 9916);
+data.setCell(0, 1, 'testPurchaseFlight')
+data.setCell(0, 2, 'org.automation.ui.BlazeDemoTests')
+data.setCell(0, 3, 6486);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'testCreateComment')
-data.setCell(1, 2, 'org.automation.api.JsonPlaceholderTests')
-data.setCell(1, 3, 9785);
+data.setCell(1, 1, 'testFillPurchaseForm')
+data.setCell(1, 2, 'org.automation.ui.BlazeDemoTests')
+data.setCell(1, 3, 6410);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'testGetCommentsForPost')
-data.setCell(2, 2, 'org.automation.api.JsonPlaceholderTests')
-data.setCell(2, 3, 9774);
+data.setCell(2, 1, 'testSelectFirstFlight')
+data.setCell(2, 2, 'org.automation.ui.BlazeDemoTests')
+data.setCell(2, 3, 5182);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'testGetAllPosts')
+data.setCell(3, 1, 'testGetSinglePost')
 data.setCell(3, 2, 'org.automation.api.JsonPlaceholderTests')
-data.setCell(3, 3, 9772);
+data.setCell(3, 3, 5004);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'testPatchPost')
+data.setCell(4, 1, 'testGetAllPosts')
 data.setCell(4, 2, 'org.automation.api.JsonPlaceholderTests')
-data.setCell(4, 3, 9771);
+data.setCell(4, 3, 5003);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'testCreatePost')
+data.setCell(5, 1, 'testCreateComment')
 data.setCell(5, 2, 'org.automation.api.JsonPlaceholderTests')
-data.setCell(5, 3, 9770);
+data.setCell(5, 3, 5003);
 data.setCell(6, 0, 6)
-data.setCell(6, 1, 'testGetAllUsers')
+data.setCell(6, 1, 'testCreatePost')
 data.setCell(6, 2, 'org.automation.api.JsonPlaceholderTests')
-data.setCell(6, 3, 9768);
+data.setCell(6, 3, 5003);
 data.setCell(7, 0, 7)
-data.setCell(7, 1, 'testUpdatePost')
+data.setCell(7, 1, 'testGetCommentsForPost')
 data.setCell(7, 2, 'org.automation.api.JsonPlaceholderTests')
-data.setCell(7, 3, 9767);
+data.setCell(7, 3, 5003);
 data.setCell(8, 0, 8)
-data.setCell(8, 1, 'testGetSingleUser')
+data.setCell(8, 1, 'testPatchPost')
 data.setCell(8, 2, 'org.automation.api.JsonPlaceholderTests')
-data.setCell(8, 3, 9767);
+data.setCell(8, 3, 5002);
 data.setCell(9, 0, 9)
-data.setCell(9, 1, 'testPurchaseFlight')
-data.setCell(9, 2, 'org.automation.ui.BlazeDemoTests')
-data.setCell(9, 3, 6400);
+data.setCell(9, 1, 'testGetSingleUser')
+data.setCell(9, 2, 'org.automation.api.JsonPlaceholderTests')
+data.setCell(9, 3, 5002);
 data.setCell(10, 0, 10)
-data.setCell(10, 1, 'testFillPurchaseForm')
-data.setCell(10, 2, 'org.automation.ui.BlazeDemoTests')
-data.setCell(10, 3, 6273);
+data.setCell(10, 1, 'testUpdatePost')
+data.setCell(10, 2, 'org.automation.api.JsonPlaceholderTests')
+data.setCell(10, 3, 5002);
 data.setCell(11, 0, 11)
-data.setCell(11, 1, 'testFlightSearchNavigation')
-data.setCell(11, 2, 'org.automation.ui.BlazeDemoTests')
-data.setCell(11, 3, 4987);
+data.setCell(11, 1, 'testGetAllUsers')
+data.setCell(11, 2, 'org.automation.api.JsonPlaceholderTests')
+data.setCell(11, 3, 5001);
 data.setCell(12, 0, 12)
-data.setCell(12, 1, 'testSelectFirstFlight')
+data.setCell(12, 1, 'testFlightSearchNavigation')
 data.setCell(12, 2, 'org.automation.ui.BlazeDemoTests')
-data.setCell(12, 3, 4425);
+data.setCell(12, 3, 4968);
 data.setCell(13, 0, 13)
-data.setCell(13, 1, 'testDeletePost')
-data.setCell(13, 2, 'org.automation.api.JsonPlaceholderTests')
-data.setCell(13, 3, 4278);
+data.setCell(13, 1, 'testHomePageContainsDepartureAndDestination')
+data.setCell(13, 2, 'org.automation.ui.BlazeDemoTests')
+data.setCell(13, 3, 4553);
 data.setCell(14, 0, 14)
 data.setCell(14, 1, 'testPurchasePageContainsForm')
 data.setCell(14, 2, 'org.automation.ui.BlazeDemoTests')
-data.setCell(14, 3, 3175);
+data.setCell(14, 3, 4483);
 data.setCell(15, 0, 15)
 data.setCell(15, 1, 'testNavigateToHomePage')
 data.setCell(15, 2, 'org.automation.ui.BlazeDemoTests')
-data.setCell(15, 3, 3076);
+data.setCell(15, 3, 4450);
 data.setCell(16, 0, 16)
-data.setCell(16, 1, 'testHomePageContainsDepartureAndDestination')
+data.setCell(16, 1, 'testFlightSelectionPage')
 data.setCell(16, 2, 'org.automation.ui.BlazeDemoTests')
-data.setCell(16, 3, 2156);
+data.setCell(16, 3, 4368);
 data.setCell(17, 0, 17)
-data.setCell(17, 1, 'testFlightSelectionPage')
+data.setCell(17, 1, 'testConfirmationPage')
 data.setCell(17, 2, 'org.automation.ui.BlazeDemoTests')
-data.setCell(17, 3, 2093);
+data.setCell(17, 3, 4335);
 data.setCell(18, 0, 18)
-data.setCell(18, 1, 'testConfirmationPage')
+data.setCell(18, 1, 'testHomePageTitle')
 data.setCell(18, 2, 'org.automation.ui.BlazeDemoTests')
-data.setCell(18, 3, 1556);
+data.setCell(18, 3, 4112);
 data.setCell(19, 0, 19)
-data.setCell(19, 1, 'testHomePageTitle')
-data.setCell(19, 2, 'org.automation.ui.BlazeDemoTests')
-data.setCell(19, 3, 1529);
+data.setCell(19, 1, 'testDeletePost')
+data.setCell(19, 2, 'org.automation.api.JsonPlaceholderTests')
+data.setCell(19, 3, 3304);
 window.suiteTableData['AutomationFrameworkParallelSuite']= { tableData: data, tableDiv: 'times-div-AutomationFrameworkParallelSuite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 13 seconds</span>
+              <span class="suite-total-time">Total running time: 10 seconds</span>
               <div id="times-div-AutomationFrameworkParallelSuite">
               </div> <!-- times-div-AutomationFrameworkParallelSuite -->
             </div> <!-- times-div -->
@@ -653,173 +589,169 @@ return data;
               <div class="chronological-class-name">org.automation.ui.BlazeDemoTests</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">27 ms</span>
+                <span class="method-start">15 ms</span>
               </div> <!-- configuration-method before -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">27 ms</span>
+                <span class="method-start">15 ms</span>
               </div> <!-- configuration-method before -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">27 ms</span>
+                <span class="method-start">16 ms</span>
               </div> <!-- configuration-method before -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">28 ms</span>
+                <span class="method-start">16 ms</span>
               </div> <!-- configuration-method before -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">28 ms</span>
+                <span class="method-start">16 ms</span>
               </div> <!-- configuration-method before -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">28 ms</span>
+                <span class="method-start">16 ms</span>
               </div> <!-- configuration-method before -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">28 ms</span>
+                <span class="method-start">16 ms</span>
               </div> <!-- configuration-method before -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">28 ms</span>
+                <span class="method-start">16 ms</span>
               </div> <!-- configuration-method before -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">29 ms</span>
+                <span class="method-start">16 ms</span>
               </div> <!-- configuration-method before -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">29 ms</span>
+                <span class="method-start">17 ms</span>
               </div> <!-- configuration-method before -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">org.automation.api.JsonPlaceholderTests</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">testDeletePost</span>
-                <span class="method-start">959 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">testGetCommentsForPost</span>
-                <span class="method-start">959 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">testCreateComment</span>
-                <span class="method-start">960 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">testGetSinglePost</span>
-                <span class="method-start">961 ms</span>
+                <span class="method-start">713 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testGetAllPosts</span>
-                <span class="method-start">961 ms</span>
+                <span class="method-start">713 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">testGetAllUsers</span>
-                <span class="method-start">963 ms</span>
+                <span class="method-name">testCreateComment</span>
+                <span class="method-start">713 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testCreatePost</span>
-                <span class="method-start">963 ms</span>
+                <span class="method-start">713 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testGetSinglePost</span>
+                <span class="method-start">713 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testGetCommentsForPost</span>
+                <span class="method-start">713 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testPatchPost</span>
-                <span class="method-start">963 ms</span>
+                <span class="method-start">714 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testGetSingleUser</span>
-                <span class="method-start">964 ms</span>
+                <span class="method-start">714 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testUpdatePost</span>
-                <span class="method-start">966 ms</span>
+                <span class="method-start">714 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testGetAllUsers</span>
+                <span class="method-start">715 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">org.automation.ui.BlazeDemoTests</div> <!-- chronological-class-name -->
               <div class="test-method">
-                <span class="method-name">testFlightSearchNavigation</span>
-                <span class="method-start">7064 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
                 <span class="method-name">testConfirmationPage</span>
-                <span class="method-start">7064 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">testPurchaseFlight</span>
-                <span class="method-start">7064 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">testNavigateToHomePage</span>
-                <span class="method-start">7064 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">testHomePageTitle</span>
-                <span class="method-start">7064 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">testPurchasePageContainsForm</span>
-                <span class="method-start">7064 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">testHomePageContainsDepartureAndDestination</span>
-                <span class="method-start">7065 ms</span>
+                <span class="method-start">4106 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testSelectFirstFlight</span>
-                <span class="method-start">7065 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">testFlightSelectionPage</span>
-                <span class="method-start">7065 ms</span>
+                <span class="method-start">4106 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testFillPurchaseForm</span>
-                <span class="method-start">7067 ms</span>
+                <span class="method-start">4106 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testNavigateToHomePage</span>
+                <span class="method-start">4106 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testHomePageTitle</span>
+                <span class="method-start">4107 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testPurchasePageContainsForm</span>
+                <span class="method-start">4107 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testPurchaseFlight</span>
+                <span class="method-start">4107 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testHomePageContainsDepartureAndDestination</span>
+                <span class="method-start">4107 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testFlightSelectionPage</span>
+                <span class="method-start">5292 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testFlightSearchNavigation</span>
+                <span class="method-start">5461 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
+                <span class="method-name">tearDown([TestResult name=testHomePageTitle status=SUCCESS method=BlazeDemoTests.testHomePageTitle()[pri:0, i...)</span>
+                <span class="method-start">8417 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method after">
                 <span class="method-name">tearDown([TestResult name=testConfirmationPage status=SUCCESS method=BlazeDemoTests.testConfirmationPage()[pr...)</span>
-                <span class="method-start">8896 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDown([TestResult name=testFlightSelectionPage status=SUCCESS method=BlazeDemoTests.testFlightSelectionPag...)</span>
-                <span class="method-start">9247 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDown([TestResult name=testHomePageTitle status=FAILURE method=BlazeDemoTests.testHomePageTitle()[pri:0, i...)</span>
-                <span class="method-start">9255 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDown([TestResult name=testHomePageContainsDepartureAndDestination status=SUCCESS method=BlazeDemoTests.te...)</span>
-                <span class="method-start">9298 ms</span>
+                <span class="method-start">8590 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown([TestResult name=testNavigateToHomePage status=SUCCESS method=BlazeDemoTests.testNavigateToHomePage(...)</span>
-                <span class="method-start">10318 ms</span>
+                <span class="method-start">8612 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown([TestResult name=testPurchasePageContainsForm status=SUCCESS method=BlazeDemoTests.testPurchasePageC...)</span>
-                <span class="method-start">10346 ms</span>
+                <span class="method-start">8653 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown([TestResult name=testHomePageContainsDepartureAndDestination status=SUCCESS method=BlazeDemoTests.te...)</span>
+                <span class="method-start">8697 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown([TestResult name=testSelectFirstFlight status=SUCCESS method=BlazeDemoTests.testSelectFirstFlight()[...)</span>
-                <span class="method-start">11708 ms</span>
+                <span class="method-start">9318 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown([TestResult name=testFlightSelectionPage status=SUCCESS method=BlazeDemoTests.testFlightSelectionPag...)</span>
+                <span class="method-start">9693 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown([TestResult name=testFlightSearchNavigation status=SUCCESS method=BlazeDemoTests.testFlightSearchNav...)</span>
-                <span class="method-start">12117 ms</span>
+                <span class="method-start">10442 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown([TestResult name=testFillPurchaseForm status=SUCCESS method=BlazeDemoTests.testFillPurchaseForm()[pr...)</span>
-                <span class="method-start">13361 ms</span>
+                <span class="method-start">10539 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown([TestResult name=testPurchaseFlight status=SUCCESS method=BlazeDemoTests.testPurchaseFlight()[pri:0,...)</span>
-                <span class="method-start">13498 ms</span>
+                <span class="method-start">10611 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
