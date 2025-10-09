@@ -27,6 +27,8 @@
         <surefire.forkCount>2C</surefire.forkCount>
         <surefire.reuseForks>true</surefire.reuseForks>
         <surefire.timeout>300</surefire.timeout>
+        <!-- Default TestNG suite file -->
+        <suiteXmlFile>testng.xml</suiteXmlFile>
 
         <!-- Dependency versions -->
         <selenium.version>4.24.0</selenium.version>
@@ -161,7 +163,7 @@
                 <version>3.2.5</version>
                 <configuration>
                     <suiteXmlFiles>
-                        <suiteXmlFile>testng.xml</suiteXmlFile>
+                        <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
                     </suiteXmlFiles>
                     <parallel>methods</parallel>
                     <threadCount>10</threadCount>
